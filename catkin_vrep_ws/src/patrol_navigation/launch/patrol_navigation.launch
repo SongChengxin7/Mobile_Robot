@@ -1,0 +1,12 @@
+<launch>
+  <arg name="pkg_name" value="patrol_navigation"/>
+  <arg name="node_name" value="patrol_nav_node"/>
+  <arg name="python_file_name" value="patrol_nav"/>
+  <arg name="param_file_name" default="patrol_default" doc="Specify a param file. ex:megaman"/>
+  <arg name="required" default="false" />
+ 
+  <node pkg="$(arg pkg_name)" type="$(arg python_file_name).py" name="$(arg node_name)" respawn="true" respawn_delay="10" output="screen" required="$(arg required)">
+    <rosparam command="load" file="$(find patrol_navigation)/config/$(arg param_file_name).yaml"/>
+  </node>
+
+</launch>

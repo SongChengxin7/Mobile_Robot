@@ -1,0 +1,8 @@
+prefix=/home/scx/catkin_vrep_ws/install
+
+Name: trafficlight_detection
+Description: Description of trafficlight_detection
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

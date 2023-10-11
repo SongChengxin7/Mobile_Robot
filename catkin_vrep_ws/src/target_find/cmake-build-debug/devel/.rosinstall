@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lyc/nav_ws/src/target_find/cmake-build-debug/devel/setup.sh

@@ -1,0 +1,18 @@
+<launch>
+    <!-- 将 urdf 文件内容设置进参数服务器 -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find myrobot_simulation)/description/xacro/xacro_robot_base_simplified.urdf.xacro" />
+
+    <param name="base_link" value="base_link"/>
+    <param name="odom_frame" value="odom"/>
+
+    <!-- 启动 rivz -->
+    <node pkg="rviz" type="rviz" name="rviz_test" />
+
+    <!-- 启动机器人状态和关节状态发布节点 -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
+
+    <!-- 启动图形化的控制关节运动节点 -->
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" />
+
+</launch>

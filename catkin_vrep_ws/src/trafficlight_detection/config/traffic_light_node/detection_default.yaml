@@ -1,0 +1,10 @@
+detect_flag: True
+traffic_light_type: False  # 红灯状态
+min_point_count: 50
+#crop_norm: [[0.0, 0.2], [0.0, 0.6]]
+dp: 5
+minDist: 20
+param1: 200
+param2: 10
+minRadius: 0
+maxRadius: 0

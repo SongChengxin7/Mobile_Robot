@@ -1,0 +1,6 @@
+rest_time: 5
+keep_patrol: False
+random_patrol: False
+patrol_type: 0
+patrol_loop: 2
+patrol_time: 10

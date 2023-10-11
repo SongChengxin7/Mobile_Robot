@@ -1,0 +1,8 @@
+prefix=/home/scx/catkin_vrep_ws/install
+
+Name: target_find
+Description: Description of target_find
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

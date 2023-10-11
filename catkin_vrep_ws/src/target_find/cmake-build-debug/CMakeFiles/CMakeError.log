@@ -1,0 +1,65 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/lyc/nav_ws/src/target_find/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c975e/fast && /usr/bin/make  -f CMakeFiles/cmTC_c975e.dir/build.make CMakeFiles/cmTC_c975e.dir/build
+make[1]: Entering directory '/home/lyc/nav_ws/src/target_find/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c975e.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_c975e.dir/src.c.o   -c /home/lyc/nav_ws/src/target_find/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c975e
+/home/lyc/Downloads/CLion-2020.3.2/clion-2020.3.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c975e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_c975e.dir/src.c.o  -o cmTC_c975e 
+CMakeFiles/cmTC_c975e.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x56): undefined reference to `pthread_cancel'
+src.c:(.text+0x67): undefined reference to `pthread_join'
+src.c:(.text+0x7b): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c975e.dir/build.make:106: recipe for target 'cmTC_c975e' failed
+make[1]: *** [cmTC_c975e] Error 1
+make[1]: Leaving directory '/home/lyc/nav_ws/src/target_find/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_c975e/fast' failed
+make: *** [cmTC_c975e/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/lyc/nav_ws/src/target_find/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8d7eb/fast && /usr/bin/make  -f CMakeFiles/cmTC_8d7eb.dir/build.make CMakeFiles/cmTC_8d7eb.dir/build
+make[1]: Entering directory '/home/lyc/nav_ws/src/target_find/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d7eb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8d7eb.dir/CheckFunctionExists.c.o   -c /home/lyc/Downloads/CLion-2020.3.2/clion-2020.3.2/bin/cmake/linux/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8d7eb
+/home/lyc/Downloads/CLion-2020.3.2/clion-2020.3.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d7eb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_8d7eb.dir/CheckFunctionExists.c.o  -o cmTC_8d7eb  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8d7eb.dir/build.make:106: recipe for target 'cmTC_8d7eb' failed
+make[1]: *** [cmTC_8d7eb] Error 1
+make[1]: Leaving directory '/home/lyc/nav_ws/src/target_find/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:141: recipe for target 'cmTC_8d7eb/fast' failed
+make: *** [cmTC_8d7eb/fast] Error 2
+
+
+

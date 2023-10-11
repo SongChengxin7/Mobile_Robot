@@ -1,0 +1,8 @@
+prefix=/home/scx/catkin_vrep_ws/install
+
+Name: cartographer_gmapping_vrep
+Description: Description of cartographer_gmapping_vrep
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

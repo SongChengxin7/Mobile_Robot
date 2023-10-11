@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/scx/catkin_vrep_ws/install/setup.sh

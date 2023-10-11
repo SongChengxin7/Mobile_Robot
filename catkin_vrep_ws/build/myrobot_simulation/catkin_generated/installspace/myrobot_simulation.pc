@@ -1,0 +1,8 @@
+prefix=/home/scx/catkin_vrep_ws/install
+
+Name: myrobot_simulation
+Description: Description of myrobot_simulation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

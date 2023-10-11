@@ -1,0 +1,17 @@
+<?xml version="1.0"?> 
+<robot name="myrobot" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="$(find cartographer_gmapping_vrep)/urdf/xacro_robot_base_simplified.urdf.xacro" />
+    <xacro:include filename="$(find cartographer_gmapping_vrep)/urdf/laser_sensor.xacro" />
+    
+    <!-- Namespaces of links -->
+    <xacro:property name="base_name" value="base_link" />
+    <xacro:property name="left_wheel" value="left_wheel_link" />
+    <xacro:property name="right_wheel" value="right_wheel_link" />
+    <xacro:property name="laser_sensor" value="laser_sensor" />
+
+    <!-- Configuration of sensor -->
+    <xacro:property name="sensor_thickness" value="0.035" />
+    <xacro:property name="sensor_radius" value="0.025" />
+
+
+</robot>

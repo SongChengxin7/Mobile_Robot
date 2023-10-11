@@ -1,0 +1,2 @@
+myrobot_simulation:myrobot_slam/cartographer_gmapping_vrep:myrobot_slam/pocker_bot_vrep_description:myrobot_slam/robot_mrobot/mrobot_navigation:myrobot_slam/robot_mrobot/mrobot_teleop:patrol_navigation:target_find:trafficlight_detection
+-DCATKIN_DEVEL_PREFIX=/home/scx/catkin_vrep_ws/devel -DCMAKE_INSTALL_PREFIX=/home/scx/catkin_vrep_ws/install -G Unix Makefiles
